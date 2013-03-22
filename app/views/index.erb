@@ -1,4 +1,11 @@
 <div class="container">
+<ul>
+  <% if @user %>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <%end%>
+</ul>
 <h2>Sign Up</h2>
 <form action='/signup' method='post'>
 <input type="text" name="name" placeholder="Your Name"><br>
@@ -8,8 +15,10 @@
 </form>
 
 <h2>Login</h2>
+<ul>
+
+</ul>
 <form action='/login' method='post'>
-<input type="text" name="name" placeholder="Your Name"><br>
 <input type="text" name="email" placeholder="Email" ><br>
 <input type="password" name="password" placeholder="password"><br>
 <input type="submit" value="Login!">

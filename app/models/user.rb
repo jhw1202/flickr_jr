@@ -3,16 +3,23 @@ class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :albums
   has_many :photos
+  
+  validates :email, :format => {:with => /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/, :message => "Not Valid"}
+  validates :password, :presence => true
+  validates :name, :presence => true
 
   before_create :hash_password
 
   def hash_password
-    @password ||= Password.new(password_hash)
+    self.password = BCrypt::Password.create(self.password)
   end
 
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
+  def self.authenticate(email, entered_password)
+    user = User.find_by_email(email)
+    if user.password == BCrypt::Password.new(entered_password)
+      return user
+    end
   end
+
 
 end
