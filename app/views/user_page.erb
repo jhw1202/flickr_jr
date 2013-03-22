@@ -1,6 +1,21 @@
 
+<div class="container">
+<!--   <div class="imagearea">
+    <img src="http://placekitten.com/600/400">
+  </div>   -->
+  <ul>
+  <% @albums.each do |album| %>
+  <div class="album_icon">
+    <li><a href="/albums/<%=album.id%>"><img src="/images/placeholders/gallery_icon.png"></a><br>
+    <%= album.name %></li>
+  </div>
+  <% end %>
+</ul>
+  <% if @has_access %>
+    <%= erb :_photo_upload %>
+  <% end %>
 
 
-<% if @has_access %>
-<%= erb :_photo_upload %>
-<% end %>
+
+
+</div>

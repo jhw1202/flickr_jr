@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="imagearea">
+    <img src="http://placekitten.com/600/400">
+  
+  </div>  
+  <% if @has_access %>
+    <%= erb :_photo_upload %>
+  <% end %>
+
+  <% @album.photos.each do |photo| %>
+<img src="<%=photo.image_path.thumb%>">
+<% end %>
+</div>
+

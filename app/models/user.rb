@@ -1,4 +1,5 @@
 require 'bcrypt'
+
 class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :albums
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, entered_password)
     user = User.find_by_email(email)
-    if user.password == BCrypt::Password.new(entered_password)
+    if BCrypt::Password.new(user.password) == entered_password
       return user
     end
   end

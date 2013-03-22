@@ -1,6 +1,22 @@
- <h1> file upload</h1>
+ <div class="uploader">
+   <h3> Create Album</h3>
 
- <form method="post" action="/upload" enctype="multipart/form-data">
-  <input type="file" name="image">
-  <input type="submit" value="Upload!">
-</form>
+   <form method="post" action="/album/new">
+     <input type="text" name="album_name" placeholder="Album name max 12 characters">
+     <input type="submit" value="I make album">
+   </form>
+ </div>  
+ <div class="uploader">
+ <h3> Img upload</h3>
+   <form method="post" action="/upload" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Title goes here"><br>
+    <input type="text" name="caption" placeholder="Caption goes here"><br>
+    <input type="file" name="image">
+    <select name="album_id">
+      <%@albums.each do |album| %>
+      <option value="<%= album.id %>"><%= album.name %></option>
+      <%end%>
+    </select>
+    <input type="submit" value="I make photo">
+  </form>
+</div>

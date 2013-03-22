@@ -1,9 +1,79 @@
-  .container {
-    margin: 20px auto;
-    width: 600px;
-    padding: 0px 20px 20px 20px;
-    font-family: VT323;
-  }
-  th {
-    text-align: left;
-  }
+
+
+.container {
+  margin: 0px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  font-family: Helvetica, sans-serif;
+}
+
+
+
+body {
+  background: url("/images/background/escheresque_ste.png");
+}
+
+h1 {
+  color: orange;
+  font-family: 'Lobster', cursive;
+  font-size: 64px;
+  text-align: center;
+  text-shadow: 4px 2px 2px rgb(0, 0, 0);
+  letter-spacing:2px
+}
+
+h1 a{
+  text-decoration: none
+}
+
+h1 a:visited{
+  color: orange;
+}
+
+h3 {
+  color: white;
+  
+}
+
+.uploader {
+  width: 564px;
+  border: 6px dotted #333;
+  padding: 10px 20px 10px 20px;
+  background-color: #666;
+  margin-bottom: 20px;
+  clear: both;
+}
+
+.album_icon li{
+  list-style-type: none;
+  display: inline;
+}
+
+
+.album_icon   {
+  color: white;
+  font-family:  'Patrick Hand SC', cursive, sans-serif;
+  font-size: 1.5em;
+  float: left;
+  padding-right: 30px;
+  padding-bottom: 40px;
+
+}
+
+.imagearea img {
+  border: 8px solid #fff;
+  box-shadow: 5px 8px 15px #000;
+  margin-bottom: 20px;
+}
+
+.login {
+  text-align: center;
+  color: white;
+}
+
+.login input {
+  padding-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+
+}
